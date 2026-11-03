@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 520" role="img" aria-labelledby="title desc">
+<title id="title">Vegetable biryani</title><desc id="desc">Illustration of fragrant vegetable biryani served on a ceramic plate</desc>
+<defs>
+ <radialGradient id="bg"><stop stop-color="#60301c"/><stop offset="1" stop-color="#1b100c"/></radialGradient>
+ <linearGradient id="plate" x2="0" y2="1"><stop stop-color="#fff4df"/><stop offset="1" stop-color="#d9bda0"/></linearGradient>
+ <linearGradient id="rice" x2="0" y2="1"><stop stop-color="#fff4bd"/><stop offset="1" stop-color="#e6a63c"/></linearGradient>
+ <filter id="shadow"><feGaussianBlur stdDeviation="14"/></filter>
+</defs>
+<rect width="720" height="520" rx="36" fill="url(#bg)"/>
+<circle cx="360" cy="270" r="215" fill="#090605" opacity=".45" filter="url(#shadow)"/>
+<ellipse cx="360" cy="265" rx="240" ry="190" fill="url(#plate)"/>
+<ellipse cx="360" cy="260" rx="207" ry="158" fill="#9a5426"/>
+<ellipse cx="360" cy="253" rx="193" ry="145" fill="url(#rice)"/>
+<g fill="#fff2c8">
+<path d="M214 231q36-38 74 0t75-5q39-31 77 5t68-8l24 39q-46 31-88 0t-82 5q-40 28-81-2t-74 5z"/>
+<path d="M235 302q45-35 83 1t74-4q42-35 84 2t62-4l-18 37q-40 25-78-4t-80 4q-42 30-84-3t-57 3z"/>
+</g>
+<g fill="#e97825"><circle cx="280" cy="190" r="12"/><circle cx="411" cy="205" r="10"/><circle cx="474" cy="270" r="13"/><circle cx="325" cy="330" r="11"/><circle cx="225" cy="275" r="9"/><circle cx="385" cy="285" r="12"/></g>
+<g fill="#4c8137"><path d="M270 250q-32-38-48-5 28 24 48 5M438 235q27-38 47-10-17 31-47 10M350 180q-8-34 20-40 14 28-20 40M390 340q22-32 42-12-12 29-42 12"/></g>
+<g fill="#8d3321"><path d="M310 215l18-18 9 25zM420 310l20-17 8 25zM260 300l17-16 9 21z"/></g>
+<g fill="#fff8e8" opacity=".9"><path d="M330 135q-25-30 0-52 5 29 0 52M385 130q-12-33 16-48-2 30-16 48M430 150q4-27 30-31-10 26-30 31"/></g>
+<text x="360" y="475" text-anchor="middle" fill="#ffd29e" font-family="Arial,sans-serif" font-size="24" letter-spacing="5">FRESH • FRAGRANT • DELICIOUS</text>
+</svg>

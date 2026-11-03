@@ -1,0 +1,133 @@
+
+<div id="loader" class="loader"><div class="loader-food">🍕</div><h2>Foodie Go</h2><p>Cooking up something delicious...</p></div>
+
+<section id="authScreen" class="auth-screen">
+  <div class="auth-art">
+    <div class="brand-mark">♨</div><h1>Foodie <span>Go</span></h1>
+    <p class="tagline">Good Food. Good Mood.</p>
+    <div class="hero-food">🍕</div>
+    <blockquote>“Life is short.<br>Eat delicious food.” <span>♡</span></blockquote>
+  </div>
+  <div class="auth-card">
+    <h2>Welcome Back! 👋</h2><p class="muted">Login to continue your food journey</p>
+    <div class="role-switch"><button class="active" data-role="user">User</button><button data-role="admin">Admin</button></div>
+    <form id="loginForm">
+      <label>Email address</label><input id="email" type="email" placeholder="you@example.com" required>
+      <label>Password</label><input id="password" type="password" placeholder="Enter password" required>
+      <button class="primary full" type="submit">Login →</button>
+    </form>
+    <p class="hint" id="loginHint">Demo: user@foodiego.com / 1234</p>
+    <button type="button" id="signupToggle" class="text-btn">New here? Create an account</button>
+    <p class="muted tiny">Frontend demo only — no real account is created.</p>
+  </div>
+</section>
+
+<div id="app" class="hidden">
+  <header class="topbar">
+    <a class="brand" href="#" data-view="home">♨ Foodie <span>Go</span></a>
+    <nav><button data-view="home">Home</button><button data-view="restaurants">Restaurants</button><button data-view="track">Track Order</button><button data-view="offers">Offers</button></nav>
+    <div class="top-actions"><span id="welcomeUser">Hello!</span><button id="cartOpen" class="cart-btn">🛒 <b id="cartCount">0</b></button><button id="logoutBtn" class="logout">Logout</button></div>
+  </header>
+
+  <main>
+    <section id="homeView" class="view">
+      <div class="hero">
+        <div><p class="eyebrow">YOUR DAILY DOSE OF DELICIOUS</p><h1>Good Food.<br><span>Good Mood!</span> ♡</h1>
+          <p>Order your favourite food from the best restaurants around you.</p>
+          <button class="primary" data-view="restaurants">Order Now →</button>
+          <div class="hero-points"><span>⚡ Fast delivery</span><span>♧ Fresh food</span><span>♡ Made with love</span></div>
+        </div>
+        <div class="hero-image"><img src="/images/veg-biryani.svg" alt="Veg biryani"></div>
+      </div>
+      <div class="section-head"><div><p class="eyebrow">WHAT ARE YOU CRAVING?</p><h2>Choose your taste</h2></div>
+        <div class="food-toggle"><button class="active" data-diet="Veg">🌿 Veg</button><button data-diet="Non-Veg">🍗 Non-Veg</button></div>
+      </div>
+      <div class="category-grid" id="categoryGrid"></div>
+      <div class="section-head"><div><p class="eyebrow">HANDPICKED FOR YOU</p><h2>Popular restaurants</h2></div><button class="text-btn" data-view="restaurants">View all →</button></div>
+      <div id="featuredRestaurants" class="restaurant-grid"></div>
+      <div class="quote-strip">“People who love to eat are always the best people.” <span>— Julia Child</span></div>
+    </section>
+
+    <section id="restaurantsView" class="view hidden">
+      <div class="page-title"><p class="eyebrow">EXPLORE THE NEIGHBOURHOOD</p><h1>Restaurants</h1><p>Find your next favourite meal.</p></div>
+      <div class="filter-row"><div class="food-toggle"><button class="active" data-diet="Veg">🌿 Veg</button><button data-diet="Non-Veg">🍗 Non-Veg</button></div><input id="restaurantSearch" placeholder="Search restaurants..." type="search"></div>
+      <div id="allRestaurants" class="restaurant-grid"></div>
+    </section>
+
+    <section id="menuView" class="view hidden">
+      <button class="back-btn" data-view="restaurants">← Back to restaurants</button>
+      <div id="restaurantBanner" class="restaurant-banner"></div>
+      <div class="menu-toolbar"><div class="food-toggle"><button class="active" data-diet="Veg">🌿 Veg</button><button data-diet="Non-Veg">🍗 Non-Veg</button></div><div id="menuCategories" class="category-tabs"></div></div>
+      <div id="menuItems" class="menu-grid"></div>
+    </section>
+
+    <section id="cartView" class="view hidden">
+      <div class="page-title"><p class="eyebrow">ALMOST THERE</p><h1>Your Cart 🛒</h1></div>
+      <div class="cart-layout"><div id="cartItems" class="cart-items"></div><aside id="billBox" class="bill-box"></aside></div>
+    </section>
+
+    <section id="paymentView" class="view hidden">
+      <div class="page-title"><p class="eyebrow">SAFE & SIMPLE CHECKOUT</p><h1>Payment</h1></div>
+      <div class="payment-layout"><div class="payment-methods"><h3>Choose payment method</h3>
+        <label><input type="radio" name="pay" value="UPI" checked> UPI</label><label><input type="radio" name="pay" value="Card"> Credit / Debit Card</label><label><input type="radio" name="pay" value="Net Banking"> Net Banking</label><label><input type="radio" name="pay" value="Cash on Delivery"> Cash on Delivery</label>
+        <label class="address-label">Delivery address</label><textarea id="address" placeholder="Enter your delivery address">Visakhapatnam, Andhra Pradesh</textarea>
+      </div><div class="qr-box"><h3>Scan to pay (demo)</h3><div class="fake-qr" aria-label="Decorative demo QR code"></div><p>Foodie Go Demo UPI</p><small>This is a sample QR design, not a payment request.</small><button id="confirmPayment" class="primary full">Confirm Demo Order →</button></div></div>
+    </section>
+
+    <section id="successView" class="view hidden center-view"><div class="success-icon">✓</div><p class="eyebrow">ORDER CONFIRMED</p><h1>Yay! Your food is on its way.</h1><p id="orderNumber"></p><button class="primary" data-view="track">Track your order →</button></section>
+
+    <section id="trackView" class="view hidden">
+      <div class="page-title"><p class="eyebrow">FROM OUR KITCHEN TO YOUR DOOR</p><h1>Track your order</h1></div>
+      <div id="trackingCard" class="tracking-card"><div class="track-steps"><div class="track-step done">✓<b>Order placed</b><small>Confirmed</small></div><div class="track-step active">♨<b>Preparing</b><small>In the kitchen</small></div><div class="track-step">🛵<b>On the way</b><small>Coming soon</small></div><div class="track-step">⌂<b>Delivered</b><small>Enjoy!</small></div></div><div class="map-placeholder"><div class="map-road"></div><span class="map-pin">📍</span><span class="map-home">⌂</span><p>Delivery route preview · Visakhapatnam</p></div><h3>🚴 Your delivery partner is getting ready!</h3><p id="trackAddress">Add your address during checkout.</p></div>
+    </section>
+
+    <section id="offersView" class="view hidden"><div class="page-title"><p class="eyebrow">A LITTLE EXTRA HAPPINESS</p><h1>Offers for you 🎉</h1></div><div class="offer-grid"><div class="offer-card"><b>FIRSTBITE</b><h2>20% OFF</h2><p>On your first demo order</p></div><div class="offer-card"><b>GOODMOOD</b><h2>Free delivery</h2><p>On orders above ₹399</p></div></div></section>
+
+    <section id="adminView" class="view hidden">
+      <div class="page-title"><p class="eyebrow">MANAGE YOUR FOOD EMPIRE</p><h1>Admin Dashboard</h1></div>
+      <div class="stats-grid">
+        <div class="stat"><span>🍽</span><h2 id="adminOrders">0</h2><p>Total demo orders</p></div>
+        <div class="stat"><span>🏪</span><h2 id="adminRestaurantCount">8</h2><p>Restaurants</p></div>
+        <div class="stat"><span>🥗</span><h2 id="adminMenuCount">0</h2><p>Menu items</p></div>
+        <div class="stat"><span>💰</span><h2 id="adminRevenue">₹0</h2><p>Demo revenue</p></div>
+      </div>
+      <div class="admin-tabs">
+        <button class="active" data-admin-tab="orders">Manage orders</button>
+        <button data-admin-tab="restaurants">Restaurants</button>
+        <button data-admin-tab="menu">Menu management</button>
+      </div>
+      <div id="adminOrdersPanel" class="admin-panel admin-section">
+        <div class="admin-heading"><div><p class="eyebrow">ORDER CONTROL</p><h2>Customer orders</h2></div><span class="admin-note">Update order status anytime</span></div>
+        <div id="adminOrderList">No orders yet. Place a demo order to see it here.</div>
+      </div>
+      <div id="adminRestaurantsPanel" class="admin-panel admin-section hidden">
+        <div class="admin-heading"><div><p class="eyebrow">PARTNER MANAGEMENT</p><h2>Manage restaurants</h2></div></div>
+        <form id="restaurantAdminForm" class="admin-form">
+          <input id="adminRestaurantName" placeholder="Restaurant name" required>
+          <select id="adminRestaurantType"><option value="Both">Veg & Non-Veg</option><option value="Veg">Veg only</option><option value="Non-Veg">Non-Veg only</option></select>
+          <input id="adminRestaurantDesc" placeholder="Short description" required>
+          <input id="adminRestaurantTime" placeholder="Delivery time (e.g. 25-35 min)" value="25-35 min" required>
+          <button class="primary" type="submit">＋ Add restaurant</button>
+        </form>
+        <div id="adminRestaurantList" class="admin-manage-list"></div>
+      </div>
+      <div id="adminMenuPanel" class="admin-panel admin-section hidden">
+        <div class="admin-heading"><div><p class="eyebrow">FOOD CATALOGUE</p><h2>Manage menu items</h2></div></div>
+        <form id="menuAdminForm" class="admin-form">
+          <input id="adminMenuName" placeholder="Food item name" required>
+          <select id="adminMenuRestaurant" required></select>
+          <select id="adminMenuCategory"><option>Starters</option><option>Pizza</option><option>Main Course</option><option>Burgers</option><option>Sides</option><option>Desserts</option><option>Beverages</option></select>
+          <input id="adminMenuPrice" type="number" min="1" placeholder="Price (₹)" required>
+          <select id="adminMenuDiet"><option value="Veg">Veg</option><option value="Non-Veg">Non-Veg</option></select>
+          <input id="adminMenuDescription" placeholder="Short description">
+          <button class="primary" type="submit">＋ Add menu item</button>
+        </form>
+        <div id="adminMenuList" class="admin-manage-list"></div>
+      </div>
+      <p class="hint">Admin demo login: admin@foodiego.com / admin123 · Changes are saved in this browser only.</p>
+    </section>
+  </main>
+  <footer><div class="brand">♨ Foodie <span>Go</span></div><p>Good Food. Good Mood. ♡</p><small>Student frontend project · Demo only</small></footer>
+</div>
+<div id="toast" class="toast"></div>
+
